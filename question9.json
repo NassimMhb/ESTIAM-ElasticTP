@@ -1,0 +1,27 @@
+{
+  "query": 
+  {
+    "match": {
+      "borough": "Manhattan" 
+    }
+  }
+  ,
+  "aggs" : {
+    "liste_meilleur_restau_par_typ_cuisine_manhattan" : {
+      "terms" : {
+        "field" : "cuisine",
+        "order" : {
+          "score" : "desc" 
+        }
+      },
+      "aggs" : {
+        "score" : {
+          "max" : {
+            "field" : "grades.score" 
+          } 
+        }
+      }
+    }
+  }  ,
+  "size":0
+}

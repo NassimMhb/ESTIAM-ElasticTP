@@ -1,0 +1,10 @@
+{
+  "aggs" : {
+    "nb_restaurants_par_quartier" : {
+      "terms" : {
+        "field" : "borough"
+      }
+    }
+  },
+  "size":0
+}

@@ -1,0 +1,15 @@
+{
+  "query" :{
+    "match" : {
+      "borough" : "Brooklyn"
+    }
+  },
+  "aggs" : {
+    "nb_restaurants_par_type_de_cuisine" : {
+      "terms" : {
+        "field" : "cuisine"
+      }
+    }
+  },
+  "size":0
+}
